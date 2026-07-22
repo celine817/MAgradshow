@@ -114,7 +114,7 @@ button, input {
 
 <!-- 首頁：輸入編號頁 -->
 <div id="homePage">
-  <h1 class="grad-title">MA Gradshow 2026</h1>
+  <h1 class="grad-title">創意藝術學系碩士生創意寫作和藝術展2026</h1>
   <p class="grad-subtitle">作品導覽 | 輸入作品編號觀看創作介紹</p>
   <div class="input-wrap">
     <input type="text" id="audioCode" placeholder="請輸入編號，例:01">
@@ -126,7 +126,7 @@ button, input {
     <p>1. 輸入展品旁標註的兩位數編號</p>
     <p>2. 點擊按鈕直接線上聆聽或觀看作品資訊</p>
   </div>
-  <footer>創意藝術學系碩士生創意寫作和藝術展 | 作品導覽系統</footer>
+  <footer>作品導覽系統</footer>
 </div>
 
 <!-- 第二頁：作品詳細頁 -->
