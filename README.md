@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>創意藝術學系碩士生創意寫作和藝術展 | 導覽系統</title>
+<title> 創意藝術學系碩士生創意寫作和藝術展 | 導覽系統 </title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:"PingFang TC","Microsoft JhengHei", sans-serif;}
 body{
@@ -126,7 +125,7 @@ button, input {
     <p>1. 輸入展品旁標註的兩位數編號</p>
     <p>2. 點擊按鈕直接線上聆聽或觀看作品資訊</p>
   </div>
-  <footer>作品導覽系統</footer>
+  <footer> 作品導覽系統 </footer>
 </div>
 
 <!-- 第二頁：作品詳細頁 -->
