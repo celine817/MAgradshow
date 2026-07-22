@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title> 創意藝術學系碩士生創意寫作和藝術展 | 導覽系統 </title>
+<title>創意藝術學系碩士生創意寫作和藝術展2026 | 導覽系統</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:"PingFang TC","Microsoft JhengHei", sans-serif;}
 body{
@@ -34,8 +35,7 @@ body::before{
 /* 頁面切換控制 */
 #homePage{display:block;}
 #detailPage{display:none;max-width:600px;margin:0 auto;background:#fff;border-radius: 16px;padding:24px;}
-.grad-title{font-size:32px;font-weight:600; letter-spacing:2px;margin-bottom:10px;color:#111118;}
-.grad-subtitle{font-size: 16px; opacity:0.85;margin-bottom:60px;line-height:1.6;}
+.grad-title{font-size:32px;font-weight:600; letter-spacing:2px;margin-bottom:60px;color:#111118;}
 .input-wrap{margin-bottom:32px;}
 #audioCode{
   width:90%;max-width:320px;padding:18px 12px; font-size:22px;text-align:center;
@@ -80,7 +80,7 @@ footer{font-size: 13px; opacity:0.65; line-height:1.6;}
 }
 .onedrive-wrapper iframe {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%; border: none;
+  top: 0; left: 0; width:100%; height:100%; border:none;
 }
 /* Buzzsprout 音訊容器（緊湊型 Bar） */
 .buzzsprout-wrapper {
@@ -114,7 +114,7 @@ button, input {
 <!-- 首頁：輸入編號頁 -->
 <div id="homePage">
   <h1 class="grad-title">創意藝術學系碩士生創意寫作和藝術展2026</h1>
-  <p class="grad-subtitle">作品導覽 | 輸入作品編號觀看創作介紹</p>
+
   <div class="input-wrap">
     <input type="text" id="audioCode" placeholder="請輸入編號，例:01">
   </div>
@@ -125,7 +125,7 @@ button, input {
     <p>1. 輸入展品旁標註的兩位數編號</p>
     <p>2. 點擊按鈕直接線上聆聽或觀看作品資訊</p>
   </div>
-  <footer> 作品導覽系統 </footer>
+  <footer>作品導覽系統</footer>
 </div>
 
 <!-- 第二頁：作品詳細頁 -->
@@ -147,7 +147,7 @@ const workData = {
   "01": {
     title: "作品標題範例",
     author: "創作者姓名",
-    mediaType: "buzzsprout", // 媒體類型設定為 buzzsprout
+    mediaType: "buzzsprout",
     buzzsproutId: "19468467",
     buzzsproutScript: "https://www.buzzsprout.com/2629235/episodes/19468467-01.js?container_id=buzzsprout-player-19468467&player=small",
     desc: "本作品透過文字與影像結合，探討都市空間與個體記憶的對話關係，以流動畫面呈現日常被忽略的細微情緒。"
@@ -155,7 +155,7 @@ const workData = {
   "02": {
     title: "待填作品名",
     author: "待填作者",
-    mediaType: "onedrive", // 媒體類型設定為 onedrive 影片
+    mediaType: "onedrive",
     embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
     desc: "補充此作品創作理念與介紹文字"
   }
@@ -195,41 +195,31 @@ function goDetail() {
   document.getElementById("authorBox").innerText = data.author;
   document.getElementById("descBox").innerText = data.desc;
 
-  // 清空上一次的播放器內容
   mediaContainer.innerHTML = "";
 
-  // 根據 mediaType 渲染對應的播放器
   if (data.mediaType === "buzzsprout") {
     const wrapper = document.createElement("div");
     wrapper.className = "buzzsprout-wrapper";
-    
-    // 建立 Buzzsprout 的專屬播放器容器
     const playerDiv = document.createElement("div");
     playerDiv.id = `buzzsprout-player-${data.buzzsproutId}`;
     wrapper.appendChild(playerDiv);
-    
-    // 動態載入並執行 Buzzsprout 的 Script
     const script = document.createElement("script");
     script.src = data.buzzsproutScript;
     script.type = "text/javascript";
     script.charset = "utf-8";
     wrapper.appendChild(script);
-    
     mediaContainer.appendChild(wrapper);
   } else if (data.mediaType === "onedrive" && data.embedUrl) {
     const wrapper = document.createElement("div");
     wrapper.className = "onedrive-wrapper";
-    
     const iframe = document.createElement("iframe");
     iframe.src = data.embedUrl;
     iframe.scrolling = "no";
     iframe.setAttribute("allowfullscreen", "true");
     wrapper.appendChild(iframe);
-    
     mediaContainer.appendChild(wrapper);
   }
 
-  // 切換頁面顯示
   home.style.display = "none";
   detail.style.display = "block";
   window.scrollTo(0,0);
@@ -239,15 +229,11 @@ function goDetail() {
 function backHome() {
   detail.style.display = "none";
   home.style.display = "block";
-  
-  // 清空輸入框與媒體容器（這會自動銷毀 Script 並讓音訊/影片停止播放）
   document.getElementById("audioCode").value = "";
   mediaContainer.innerHTML = "";
-  
   window.scrollTo(0,0);
 }
 
-// 綁定點擊與 Enter 快捷鍵
 document.getElementById("playBtn").addEventListener("click", goDetail);
 document.getElementById("audioCode").addEventListener("keydown", e => {
   if (e.key === "Enter") goDetail();
