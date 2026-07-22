@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
@@ -6,17 +6,7 @@
 <title>創意藝術學系碩士生創意寫作和藝術展2026 | 作品導覽系統</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:"PingFang TC","Microsoft JhengHei", sans-serif;}
-
-/* ＝＝＝ 重點：完全移除所有藍色框、點擊高亮 ＝＝＝ */
-input, button {
-  outline: none !important;
-  -webkit-tap-highlight-color: transparent !important;
-}
-input:focus, button:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
+  
 body{
   background: linear-gradient(150deg, #70c4f9 0%, #82cff8 45%, #f0b8e3 100%);
   min-height:100vh; padding:80px 24px 40px;text-align:center;color:#1a1a22;position:relative; overflow-x:hidden;
