@@ -1,6 +1,3 @@
-<style>
-  header, .project-name, .btn, #header { display: none !important; }
-</style>
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
@@ -105,6 +102,7 @@ button, input {min-height:50px;}
     <p>💡 使用說明</p>
     <p>1. 輸入展品旁標註的兩位數編號</p>
     <p>2. 點擊按鈕直接線上聆聽或觀看作品資訊</p>
+    
   </div>
 
   <footer>作品導覽系統</footer>
@@ -122,19 +120,223 @@ button, input {min-height:50px;}
 <script>
 const workData = {
   "01": {
-    title: "作品標題範例",
-    author: "創作者姓名",
+
+    title: "香港打小人——民俗文化展",
+    author: "陳航、高晶瑩、李佳麗、劉梓炫、葉柳汝、劉師亦｜指導老師：劉文英女士",
     mediaType: "buzzsprout",
     buzzsproutId: "19468467",
     buzzsproutScript: "https://www.buzzsprout.com/2629235/episodes/19468467-01.js?container_id=buzzsprout-player-19468467&player=small",
-    desc: "本作品透過文字與影像結合，探討都市空間與個體記憶的對話關係，以流動畫面呈現日常被忽略的細微情緒。"
+    desc: ""
   },
   "02": {
-    title: "待填作品名",
-    author: "待填作者",
+    title: "剪•影 皮影藝術展",
+    author: "蔡昱、董宇鵬、梁雪琪、王藝潤｜指導老師：劉文英女士",
     mediaType: "onedrive",
     embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
-    desc: "補充此作品創作理念與介紹文字"
+    desc: ""
+  },
+  "03": {
+    title: "「搭字」——漢字的解構與重構 漢字藝術展",
+    author: "蘭令儀、陳文潔、李蔚然、沈詩雯｜指導老師：劉文英女士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "04": {
+    title: "脆升升薯條——平面廣告文案創作",
+    author: "田野｜指導老師：關麗馨女士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "05": {
+    title: "被困住的她",
+    author: "淡水源｜指導老師：潘浩欣女士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "06": {
+    title: "隱痛",
+    author: "阮文婕｜指導老師：潘浩欣女士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "07": {
+    title: "狐緣三日",
+    author: "余志鵬｜指導老師：邵棟博士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "08": {
+    title: "蒸汽大唐",
+    author: "譚梓欽｜指導老師：邵棟博士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "09": {
+    title: "五感京都",
+    author: "張子青、王亞龍、朱文雯、張新瑞、李蔚然、蔡昱｜指導老師：梁蔚芝女士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "10": {
+    title: "七面中國",
+    author: "田野、曾忱心、黃裕、黎寶聲、區雅淇、陳泳邑、朱佳妍｜指導老師：梁蔚芝女士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "11": {
+    title: "一口芒果味",
+    author: "陳文潔、李思蕊、林思辰、黃琬迪、楊舒涵、李莉莉、湯韞迪｜指導老師：梁蔚芝女士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "12": {
+    title: "宴",
+    author: "魏珞一、吳芊瑤、鐘瑞華、林靜、高啟軒、蒯奕彤、莊欣瑜｜指導老師：梁蔚芝女士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "13": {
+    title: "MACICA作品13",
+    author: "資訊待補",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "14": {
+    title: "MACICA作品14",
+    author: "資訊待補",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "15": {
+    title: "MACICA作品15",
+    author: "資訊待補",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "16": {
+    title: "MACICA作品16",
+    author: "資訊待補",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "17": {
+    title: "MACICA作品17",
+    author: "資訊待補",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "18": {
+    title: "MACICA作品18",
+    author: "資訊待補",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "19": {
+    title: "MACICA作品19",
+    author: "資訊待補",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "20": {
+    title: "MACICA作品20",
+    author: "資訊待補",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "21": {
+    title: "MACICA作品21",
+    author: "資訊待補",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "22": {
+    title: "裁紙",
+    author: "王衣田｜指導老師：余文翰博士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "23": {
+    title: "你已登出",
+    author: "盧清玲｜指導老師：余文翰博士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "24": {
+    title: "荊棘與星光",
+    author: "蒯奕彤｜指導老師：余文翰博士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "25": {
+    title: "草稿箱",
+    author: "吳宇宣｜指導老師：余文翰博士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "26": {
+    title: "作品樣刊選展",
+    author: "李錦城｜指導老師：余文翰博士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "27": {
+    title: "作品樣刊選展",
+    author: "余緣友｜指導老師：余文翰博士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "28": {
+    title: "作品樣刊選展",
+    author: "黃忠尚｜指導老師：余文翰博士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "29": {
+    title: "作品樣刊選展",
+    author: "王婷語｜指導老師：余文翰博士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "30": {
+    title: "作品樣刊選展",
+    author: "曾可駿｜指導老師：余文翰博士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
+  },
+  "31": {
+    title: "作品樣刊選展",
+    author: "王衣田｜指導老師：余文翰博士",
+    mediaType: "onedrive",
+    embedUrl: "https://onedrive.live.com/embed?cid=YOUR_CID&resid=YOUR_RESID&authkey=YOUR_AUTHKEY",
+    desc: ""
   }
 };
 
@@ -152,7 +354,10 @@ function goDetail() {
   const input = document.getElementById("audioCode");
   const num = cleanCode(input.value.trim());
   if (!num) { alert("請輸入兩位數展品編號"); input.focus(); return; }
-  if (!workData[num]) { alert("編號不存在"); input.value=""; input.focus(); return; }
+  if (!workData[num]) { 
+    alert("編號不存在，系統僅支援01–31；32號為A4動畫合集大卡，系統暫不支援，可現場閱讀實體展板與各動畫音頻下方描述"); 
+    input.value=""; input.focus(); return; 
+  }
 
   const data = workData[num];
   document.getElementById("titleBox").innerText = data.title;
@@ -160,6 +365,7 @@ function goDetail() {
   document.getElementById("descBox").innerText = data.desc;
   mediaContainer.innerHTML = "";
 
+  // 01音頻載入邏輯完整保留，確保播放器正常渲染
   if (data.mediaType === "buzzsprout") {
     const wrapper = document.createElement("div");
     wrapper.className = "buzzsprout-wrapper";
@@ -168,7 +374,10 @@ function goDetail() {
     wrapper.appendChild(playerDiv);
     const script = document.createElement("script");
     script.src = data.buzzsproutScript;
-    wrapper.appendChild(script);
+    // 強制延遲載入腳本避免播放器丟失
+    setTimeout(()=>{
+      wrapper.appendChild(script);
+    }, 100);
     mediaContainer.appendChild(wrapper);
   } else if (data.mediaType === "onedrive") {
     const wrapper = document.createElement("div");
@@ -201,5 +410,3 @@ document.getElementById("audioCode").addEventListener("keydown", e => {
 </script>
 </body>
 </html>
-
-
