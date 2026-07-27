@@ -150,7 +150,7 @@ const workData = {
 "29": { title: "作品樣刊選展", author: "王婷語｜指導老師：余文翰博士", mediaType: "buzzsprout", buzzsproutId: "19554128", buzzsproutScript:"https://www.buzzsprout.com/2632174/episodes/19554128-29.js?container_id=buzzsprout-player-19554128&player=small&download=false&share=false", desc: "" },
 "30": { title: "作品樣刊選展",author: "曾可駿｜指導老師：余文翰博士", mediaType: "buzzsprout", buzzsproutId: "19554129", buzzsproutScript:"https://www.buzzsprout.com/2632174/episodes/19554129-30.js?container_id=buzzsprout-player-19554129&player=small&download=false&share=false", desc:"" },
 "31": { title: "作品樣刊選展", author: "王衣田｜指導老師：余文翰博士", mediaType: "buzzsprout", buzzsproutId: "19554131", buzzsproutScript:"https://www.buzzsprout.com/2632174/episodes/19554131-31.js?container_id=buzzsprout-player-19554131&player=small&download=false&share=false", desc: ""
-  }
+}
 };
 
 const home = document.getElementById("homePage");
@@ -178,6 +178,7 @@ function goDetail() {
   document.getElementById("descBox").innerText = data.desc;
   mediaContainer.innerHTML = "";
 
+  // 01音頻載入邏輯完整保留，確保播放器正常渲染
   if (data.mediaType === "buzzsprout") {
     const wrapper = document.createElement("div");
     wrapper.className = "buzzsprout-wrapper";
@@ -186,6 +187,7 @@ function goDetail() {
     wrapper.appendChild(playerDiv);
     const script = document.createElement("script");
     script.src = data.buzzsproutScript;
+    // 強制延遲載入腳本避免播放器丟失
     setTimeout(()=>{
       wrapper.appendChild(script);
     }, 100);
